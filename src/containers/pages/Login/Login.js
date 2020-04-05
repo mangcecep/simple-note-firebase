@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { actionUserName } from '../../../config/redux/action'
 
 export class Login extends Component {
-    changeUser = () => {
+    changeUser = (props) => {
         this.props.changeUserName()
     }
     render() {
@@ -16,13 +17,19 @@ export class Login extends Component {
     }
 }
 
-const reduxState = (state) => ({
+// const actionUserName = () => (dispatch) => {
+//     setTimeout( () => {
+//         return dispatch({type: 'CHANGE_USER', value: 'Cecep Solihin Yusup'});
+//     }, 1000)
+// }
+
+const reduxState = state => ({
     popupProps: state.popup,
     userName: state.user
 })
 
-const reduxDispatch = (dispatch) => ({
-    chaneUserName : () => dispatch({type: 'CHANGE_USER', value: 'Cecep Solihin Yusup'})
+const reduxDispatch = dispatch => ({
+    changeUserName : () => dispatch(actionUserName(dispatch))
 })
 
 export default connect(reduxState, reduxDispatch)(Login)
