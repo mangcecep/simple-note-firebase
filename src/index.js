@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 import firebase from './config/firebase';
 
-console.log('config firebase : ', firebase);
+// console.log('config firebase : ', firebase);
 
 ReactDOM.render(
   <React.StrictMode>
