@@ -1,8 +1,8 @@
 import firebase from 'firebase/app'
 import 'firebase/auth'
-// import 'firebase/firestore'
+import 'firebase/database'
 
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyAAXbW9d3fDQTJtRznLeRQ3Fs35IDFrj84",
     authDomain: "simple-notes-firebase-4118d.firebaseapp.com",
     databaseURL: "https://simple-notes-firebase-4118d.firebaseio.com",
@@ -15,4 +15,6 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-  export default firebase
+  export const database = firebase.database();
+
+  export default firebase;
